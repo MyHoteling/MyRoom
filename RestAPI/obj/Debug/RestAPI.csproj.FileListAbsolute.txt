@@ -1,0 +1,14 @@
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\RestAPI.dll.config
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\RestAPI.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\RestAPI.pdb
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\Newtonsoft.Json.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Net.Http.Formatting.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.WebHost.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\Newtonsoft.Json.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Net.Http.Formatting.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.WebHost.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.csprojResolveAssemblyReference.cache
+D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.pdb
