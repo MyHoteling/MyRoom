@@ -12,3 +12,7 @@ D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.WebHost.xml
 D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.csprojResolveAssemblyReference.cache
 D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.dll
 D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.pdb
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.SqlServer.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.SqlServer.xml
