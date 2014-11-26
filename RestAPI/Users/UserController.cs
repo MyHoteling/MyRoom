@@ -16,7 +16,13 @@ namespace RestAPI.Users
 {
     public class UserController : ApiController
     {
-        private RestAPIContext db = new RestAPIContext();
+        private IRestAPIContext db = new RestAPIContext();
+
+        public UserController() { }
+
+        public UserController(IRestAPIContext context) {
+            this.db = context;
+        }
 
         // GET: api/User
         public IQueryable<User> GetUsers()
@@ -64,7 +70,7 @@ namespace RestAPI.Users
                 dbUser.Password = this.EncryptPassword(user.Password);
             }
 
-            db.Entry(dbUser).State = EntityState.Modified;
+            db.MarkAsModified(dbUser);
 
             try
             {

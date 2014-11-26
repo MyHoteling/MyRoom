@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RestAPI.Models
 {
-    public class RestAPIContext : DbContext
+    public class RestAPIContext : DbContext, IRestAPIContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -20,6 +20,10 @@ namespace RestAPI.Models
         }
 
         public System.Data.Entity.DbSet<RestAPI.Models.User> Users { get; set; }
-    
+
+        public void MarkAsModified(User item)
+        {
+            Entry(item).State = EntityState.Modified;
+        }
     }
 }
