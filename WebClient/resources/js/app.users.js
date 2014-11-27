@@ -9,29 +9,70 @@ app.controller(
     function ($scope, userService) {
         console.info("USERS MODULE: Controller User... READY");
 
+        $scope.master = {
+            Id: "",
+            Name: "",
+            Surname: "",
+            Email: "",
+            Password: "",
+            Active: ""
+        };
         $scope.users = [];
 
-        $scope.form = {
-            id: "",
-            name: "",
-            surname: "",
-            email: "",
-            password: "",
-            active: ""
+        $scope.form = {};
+
+        $scope.newUser = function () {
+            console.info("USERS MODULE: Adding User...");
+
+            var tpl = angular.copy($scope.master);
+
+            $scope.users.push(tpl);
+            $scope.form = $scope.users[$scope.users.length -1];
+        }
+
+        $scope.addUser = function () {
+            console.info("USERS MODULE: Saving User...");
+
+            $scope.form.Password = jQuery('#Password').val();
+
+            console.log($scope.form);
+
+            userService.addUser($scope.form)
+                       .then(function () {
+                           loadRemoteData();
+
+                           $scope.form = angular.copy($scope.master);
+
+                       }, function (errorMessage) {
+                           console.error(errorMessage);
+                       });
+        };
+
+        $scope.deleteUser = function () {
+            console.info("USERS MODULE: Deleting User...");
+            console.log($scope.form);
+            
+            userService.removeUser($scope.form)
+                       .then(function () {
+                           loadRemoteData();
+                       }, function (errorMessage) {
+                           console.error(errorMessage);
+                       });
         };
 
         loadRemoteData();
 
-        function applyRemoteData (users) {
+        function applyRemoteData(users) {
             $scope.users = users;
-        }
+        };
 
         function loadRemoteData() {
+            console.info("USERS MODULE: Loading Users...");
             userService.getUsers()
                        .then(function (users) {
                            applyRemoteData(users);
                        });
-        }
+        };
     });
 
 app.service(
@@ -45,8 +86,29 @@ app.service(
             removeUser: removeUser
         });
 
-        function addUser() {
+        function addUser(user) {
             console.info("USERS MODULE: AddUser... CALLED");
+
+            var method = 'post',
+                url = 'user';
+
+            if (user.Id == "") {
+                delete user.Id;
+            } else {
+                method = 'put';
+                url = 'user/' + user.Id;
+            }
+
+            var request = $http({
+                method: method,
+                url: appConfig.webservice + url,
+                headers: {
+                    "Content-Type" : "application/x-www-form-urlencoded"
+                },
+                data: $.param(user)
+            });
+
+            return (request.then(handleSuccess, handleError));
         }
 
         function getUsers() {
@@ -60,13 +122,24 @@ app.service(
             return (request.then(handleSuccess, handleError));
         }
 
-        function removeUser() {
+        function removeUser(user) {
             console.info("USERS MODULE: removeUsers... CALLED");
+
+            var request = $http({
+                method: "delete",
+                url: appConfig.webservice + 'user/' + user.Id,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                data: $.param(user)
+            });
+
+            return (request.then(handleSuccess, handleError));
         }
 
         function handleError(response) {
             console.info("USERS MODULE: HandleError...");
-            console.err(response.data);
+            console.error(response.data);
 
             if (!angular.isObject(response.data) ||
                 !response.data.message) {
@@ -78,7 +151,7 @@ app.service(
 
         function handleSuccess(response) {
             console.info("USERS MODULE: HandleSuccess...");
-            console.err(response);
+            console.log(response);
 
             return (response.data);
         }
