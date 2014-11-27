@@ -18,3 +18,6 @@ D:\IT Servicios Globales\MyRoom\RestAPI.Tests\bin\Debug\System.Web.Http.WebHost.
 D:\IT Servicios Globales\MyRoom\RestAPI.Tests\obj\Debug\RestAPI.Tests.csprojResolveAssemblyReference.cache
 D:\IT Servicios Globales\MyRoom\RestAPI.Tests\obj\Debug\RestAPI.Tests.dll
 D:\IT Servicios Globales\MyRoom\RestAPI.Tests\obj\Debug\RestAPI.Tests.pdb
+D:\IT Servicios Globales\MyRoom\RestAPI.Tests\bin\Debug\System.Web.Http.Cors.dll
+D:\IT Servicios Globales\MyRoom\RestAPI.Tests\bin\Debug\System.Web.Cors.dll
+D:\IT Servicios Globales\MyRoom\RestAPI.Tests\bin\Debug\System.Web.Http.Cors.xml

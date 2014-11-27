@@ -16,3 +16,6 @@ D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.dll
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.SqlServer.dll
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.xml
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.SqlServer.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Cors.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.Cors.dll
+D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.Cors.xml
