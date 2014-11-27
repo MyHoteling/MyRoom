@@ -29,15 +29,7 @@ namespace RestAPI.Users
         // GET: api/User
         public IQueryable<User> GetUsers()
         {
-            return from u in this.db.Users
-                   select new User
-                   {
-                       Id = u.Id,
-                       Name = u.Name,
-                       Surname = u.Surname,
-                       Email = u.Email,
-                       Active = u.Active
-                   };
+            return db.Users;
         }
 
         // GET: api/User/5
