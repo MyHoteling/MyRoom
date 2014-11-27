@@ -33,11 +33,11 @@
                                 <div class="col-md-6">
                                     <h4>"BACKEND USER" LIST</h4>
                                     <div>
-                                        <select size="20" class="form-control"></select>
+                                        <select size="20" class="form-control" ng-model="form" ng-options="(i.Name + ' ' + i.Surname) for i in users | orderBy: 'Name'"></select>
                                     </div>
                                     <hr />
                                     <div class="text-right">
-                                        <button type="button" class="btn btn-default">Delete User</button>
+                                        <button type="button" class="btn btn-default" ng-click="deleteUser()">Delete User</button>
                                         <button type="button" class="btn btn-default">New User</button>
                                     </div>
                                     <div class="alert alert-default">
@@ -54,32 +54,33 @@
                                 </div>
                                 <div class="col-md-6">
                                     <h4>"BACKEND USER" FORM</h4>
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" ng-submit="addUser()">
+                                        <input type="hidden"ng-model="form.Id" />
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" ng-model="form.Name" class="form-control" />
                                         </div>
                                         <div class="form-group">
                                             <label>Lastname</label>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" ng-model="form.Surname" class="form-control" />
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" class="form-control" />
+                                            <input type="email" ng-model="form.Email" class="form-control" />
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" class="form-control" />
+                                            <input type="password" ng-model="form.Password" class="form-control" />
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox">
+                                                <input type="checkbox" ng-model="form.Active">
                                                 Active
                                             </label>
                                         </div>
                                         <div class="text-right">
-                                            <button type="button" class="btn btn-default">Cancel</button>
-                                            <button type="button" class="btn btn-default">Save</button>
+                                            <button type="reset" class="btn btn-default">Cancel</button>
+                                            <button type="submit" class="btn btn-default">Save</button>
                                         </div>
                                     </form>
                                 </div>

@@ -9,29 +9,51 @@ app.controller(
     function ($scope, userService) {
         console.info("USERS MODULE: Controller User... READY");
 
+        $scope.master = {};
         $scope.users = [];
 
         $scope.form = {
-            id: "",
-            name: "",
-            surname: "",
-            email: "",
-            password: "",
-            active: ""
+            Id: "",
+            Name: "",
+            Surname: "",
+            Email: "",
+            Password: "",
+            Active: ""
+        };
+
+        $scope.addUser = function () {
+            console.info("USERS MODULE: Adding User...");
+            console.log($scope.form);
+            userService.addUser($scope.form)
+                       .then(function () {
+                           loadRemoteData();
+
+                           $scope.form = angular.copy($scope.master);
+
+                       }, function (errorMessage) {
+                           console.error(errorMessage);
+                       });
+        };
+
+        $scope.deleteUser = function () {
+            console.info("USERS MODULE: Deleting User...");
+            console.log($scope.form);
         };
 
         loadRemoteData();
 
-        function applyRemoteData (users) {
+        function applyRemoteData(users) {
+            $scope.form = users[0];
             $scope.users = users;
-        }
+        };
 
         function loadRemoteData() {
+            console.info("USERS MODULE: Loading Users...");
             userService.getUsers()
                        .then(function (users) {
                            applyRemoteData(users);
                        });
-        }
+        };
     });
 
 app.service(
@@ -45,8 +67,21 @@ app.service(
             removeUser: removeUser
         });
 
-        function addUser() {
+        function addUser(user) {
             console.info("USERS MODULE: AddUser... CALLED");
+
+            delete user.Id;
+
+            var request = $http({
+                method: "post",
+                url: appConfig.webservice + 'user',
+                headers: {
+                    "Content-Type" : "application/x-www-form-urlencoded"
+                },
+                data: $.param(user)
+            });
+
+            return (request.then(handleSuccess, handleError));
         }
 
         function getUsers() {
@@ -66,7 +101,7 @@ app.service(
 
         function handleError(response) {
             console.info("USERS MODULE: HandleError...");
-            console.err(response.data);
+            console.error(response.data);
 
             if (!angular.isObject(response.data) ||
                 !response.data.message) {
@@ -78,7 +113,7 @@ app.service(
 
         function handleSuccess(response) {
             console.info("USERS MODULE: HandleSuccess...");
-            console.err(response);
+            console.log(response);
 
             return (response.data);
         }
