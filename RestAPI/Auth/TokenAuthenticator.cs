@@ -12,6 +12,7 @@ namespace RestAPI.Auth
     {
         protected override bool IsAuthorized(HttpActionContext context)
         {
+            
             bool output = false;
             try
             {
