@@ -92,13 +92,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auth\TokenAuthenticator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412011658453_Authentication Beta 1.cs" />
+    <Compile Include="Migrations\201412011658453_Authentication Beta 1.Designer.cs">
+      <DependentUpon>201412011658453_Authentication Beta 1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Auth.cs" />
     <Compile Include="Models\IRestAPIContext.cs" />
     <Compile Include="Models\RestAPIContext.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\AuthController.cs" />
     <Compile Include="Users\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412011658453_Authentication Beta 1.resx">
+      <DependentUpon>201412011658453_Authentication Beta 1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
