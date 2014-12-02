@@ -9,6 +9,7 @@
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_DbContextTypeFullName>RestAPI.Models.RestAPIContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>MyRoom API Local</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

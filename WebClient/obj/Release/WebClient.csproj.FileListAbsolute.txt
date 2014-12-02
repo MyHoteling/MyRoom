@@ -1,0 +1,6 @@
+D:\IT Servicios Globales\MyRoom\WebClient\bin\WebClient.dll.config
+D:\IT Servicios Globales\MyRoom\WebClient\bin\WebClient.dll
+D:\IT Servicios Globales\MyRoom\WebClient\bin\WebClient.pdb
+D:\IT Servicios Globales\MyRoom\WebClient\obj\Release\WebClient.csprojResolveAssemblyReference.cache
+D:\IT Servicios Globales\MyRoom\WebClient\obj\Release\WebClient.dll
+D:\IT Servicios Globales\MyRoom\WebClient\obj\Release\WebClient.pdb

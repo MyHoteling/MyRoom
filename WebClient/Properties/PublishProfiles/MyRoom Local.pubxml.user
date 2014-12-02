@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\j.trejo\Desktop\MyRoom</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/WebClient.dll">
+      <publishTime>12/02/2014 11:32:53</publishTime>
+    </File>
+    <File Include="config/app.global.js">
+      <publishTime>12/02/2014 11:27:54</publishTime>
+    </File>
+    <File Include="resources/js/app.users.js">
+      <publishTime>11/27/2014 14:18:52</publishTime>
+    </File>
+    <File Include="users.html">
+      <publishTime>11/27/2014 14:19:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/02/2014 11:32:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
