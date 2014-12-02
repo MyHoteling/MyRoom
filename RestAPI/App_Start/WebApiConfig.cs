@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestAPI.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -20,6 +21,8 @@ namespace RestAPI
                 routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Filters.Add(new TokenAuthenticator());
         }
     }
 }

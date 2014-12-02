@@ -19,3 +19,5 @@ D:\IT Servicios Globales\MyRoom\RestAPI\bin\EntityFramework.SqlServer.xml
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Cors.dll
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.Cors.dll
 D:\IT Servicios Globales\MyRoom\RestAPI\bin\System.Web.Http.Cors.xml
+D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.Migrations.AuthenticationBeta1.resources
+D:\IT Servicios Globales\MyRoom\RestAPI\obj\Debug\RestAPI.csproj.GenerateResource.Cache

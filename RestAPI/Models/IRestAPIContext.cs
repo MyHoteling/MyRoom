@@ -9,6 +9,7 @@ namespace RestAPI.Models
     public interface IRestAPIContext : IDisposable 
     {
         DbSet<User> Users { get; }
+        DbSet<Token> Tokens { get; }
         int SaveChanges();
         void MarkAsModified(User item);
        

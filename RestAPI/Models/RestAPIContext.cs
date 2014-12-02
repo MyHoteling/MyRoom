@@ -20,6 +20,7 @@ namespace RestAPI.Models
         }
 
         public System.Data.Entity.DbSet<RestAPI.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<RestAPI.Models.Token> Tokens { get; set; }
 
         public void MarkAsModified(User item)
         {

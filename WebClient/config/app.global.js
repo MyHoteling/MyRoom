@@ -1,3 +1,3 @@
 ﻿var appConfig = {
-    webservice: 'http://itsg-myroom.azurewebsites.net/'
+    webservice: 'http://localhost:53185/'
 };

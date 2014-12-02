@@ -27,6 +27,7 @@ namespace RestAPI.Users
         }
 
         // GET: api/User
+        
         public IQueryable<User> GetUsers()
         {
             return db.Users;
