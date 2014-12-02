@@ -1,12 +1,12 @@
 ﻿console.info("FILE LOADED: app.login.js");
 
-var app = angular.module("Login", []);
+var app = angular.module("Login", ["ngCookies"]);
 
 console.info("LOGIN MODULE: CREATED");
 
 app.controller(
     "LoginController",
-    function ($scope, loginService) {
+    ['$cookies', '$scope', 'loginService', function ($cookies, $scope, loginService) {
         console.info("LOGIN MODULE: Controller Login... READY");
 
         $scope.master = {
@@ -18,16 +18,19 @@ app.controller(
 
         $scope.login = function () {
             console.info("LOGIN MODULE: Singing in...");
+            console.log($scope.form);
 
             loginService.login($scope.form).then(
-                function () {
-                    console.log("ENTRE");
+                function (token) {
+                    $cookies.Auth = token.AccessToken;
+
+                    location.href = 'users.html';
                 },
                 function(errorMessage){
                 console.log(errorMessage);
             });
         };
-    });
+    }]);
 
 app.service(
     "loginService",
@@ -38,8 +41,19 @@ app.service(
             login : login
         });
 
-        function login(identity, credential) {
+        function login(authRequest) {
+            console.info("LOGIN MODULE: login... CALLED");
 
+            var request = $http({
+                method: "post",
+                url: appConfig.webservice + 'auth/auth',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                data: $.param(authRequest)
+            });
+
+            return (request.then(handleSuccess, handleError));
         };
 
         function handleError(response) {

@@ -34,7 +34,7 @@ namespace RestAPI.Models
         }
 
         [Required(ErrorMessage="The email is required")]
-        [Column("E-mail", TypeName="varchar")]
+        [Column("Email", TypeName="varchar")]
         [Index(IsUnique=true)]
         [StringLength(100)]
         public string Email
